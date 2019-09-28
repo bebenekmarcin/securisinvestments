@@ -6,7 +6,7 @@ using Uploader.Model;
 using Uploader.Services;
 using Xunit;
 
-namespace Uploader.Tests.Services
+namespace Uploader.UnitTests.Services
 {
     public class AggregatorShould
     {
