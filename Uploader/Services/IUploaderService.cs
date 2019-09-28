@@ -3,5 +3,7 @@
     public interface IUploaderService
     {
         void UploadInvestmentsFromCsvToDb(string filePath);
+
+        void UploadInvestmentsFromDbToCsv(string filePath);
     }
 }

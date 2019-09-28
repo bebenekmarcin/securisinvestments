@@ -4,7 +4,7 @@ namespace Uploader.Model
 {
     public class Investment
     { 
-        public Guid InvestmentId { get; set; }
+        public int InvestmentId { get; set; }
         public string Fund { get; set; }
         public long Value { get; set; }
         public long Collateral { get; set; }

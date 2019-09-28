@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Uploader.Migrations
 {
@@ -11,7 +10,8 @@ namespace Uploader.Migrations
                 name: "Investments",
                 columns: table => new
                 {
-                    InvestmentId = table.Column<Guid>(nullable: false),
+                    InvestmentId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Fund = table.Column<string>(nullable: true),
                     Value = table.Column<long>(nullable: false),
                     Collateral = table.Column<long>(nullable: false)
@@ -25,7 +25,8 @@ namespace Uploader.Migrations
                 name: "InvestmentTotals",
                 columns: table => new
                 {
-                    InvestmentTotalId = table.Column<Guid>(nullable: false),
+                    InvestmentTotalId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ValueTotal = table.Column<long>(nullable: false),
                     CollateralTotal = table.Column<long>(nullable: false),
                     NetTotal = table.Column<long>(nullable: false)

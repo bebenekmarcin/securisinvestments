@@ -21,5 +21,11 @@
             _databaseService.SaveInvestments(investments);
             _databaseService.SaveInvestmentTotal(investmentTotal);
         }
+
+        public void UploadInvestmentsFromDbToCsv(string filePath)
+        {
+            var investments = _databaseService.GetInvestments();
+            _csvService.SaveInvestments(filePath, investments);
+        }
     }
 }

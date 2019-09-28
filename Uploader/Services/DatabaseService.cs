@@ -1,22 +1,38 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Uploader.Model;
 
 namespace Uploader.Services
 {
     public class DatabaseService : IDatabaseService
     {
+        private readonly DatabaseContext _db;
+
+        public DatabaseService(DatabaseContext db)
+        {
+            _db = db;
+        }
+
+        public IList<Investment> GetInvestments()
+        {
+            return _db.Investments.ToList();
+        }
+
         public void SaveInvestments(IList<Investment> investments)
         {
-            using var db = new DatabaseContext();
-            db.Investments.AddRange(investments);
-            db.SaveChanges();
+            _db.Investments.AddRange(investments);
+            _db.SaveChanges();
+        }
+
+        public IList<InvestmentTotal> GetInvestmentTotals()
+        {
+            return _db.InvestmentTotals.ToList();
         }
 
         public void SaveInvestmentTotal(InvestmentTotal investmentTotal)
         {
-            using var db = new DatabaseContext();
-            db.InvestmentTotals.Add(investmentTotal);
-            db.SaveChanges();
+            _db.InvestmentTotals.Add(investmentTotal);
+            _db.SaveChanges();
         }
     }
 }

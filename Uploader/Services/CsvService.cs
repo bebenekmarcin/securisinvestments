@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using Uploader.Model;
 
 namespace Uploader.Services
@@ -34,9 +35,23 @@ namespace Uploader.Services
             }
         }
 
-        public void SaveInvestments(IList<Investment> investments)
+        public void SaveInvestments(string filePath, IList<Investment> investments)
         {
-            throw new NotImplementedException();
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+
+            var csv = new StringBuilder();
+            csv.AppendLine("Fund,Value,Collateral");
+
+            foreach (var investment in investments)
+            {
+                var newLine = $"{investment.Fund},{investment.Value},{investment.Collateral}";
+                csv.AppendLine(newLine);
+            }
+
+            File.WriteAllText(filePath, csv.ToString());
         }
     }
 }

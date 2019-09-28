@@ -7,6 +7,6 @@ namespace Uploader.Services
     {
         IList<Investment> GetInvestments(string filePath);
 
-        void SaveInvestments(IList<Investment> investments);
+        void SaveInvestments(string filePath, IList<Investment> investments);
     }
 }
