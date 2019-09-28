@@ -5,9 +5,14 @@ VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uploader", "Uploader\Uploader.csproj", "{32E49C21-D928-4D17-B550-FD8009B5686C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uploader.IntegrationTests", "Uploader.IntegrationTests\Uploader.IntegrationTests.csproj", "{6C4CF146-68AD-4669-8E01-9A53F8A2A08A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uploader.IntegrationTests", "Uploader.IntegrationTests\Uploader.IntegrationTests.csproj", "{6C4CF146-68AD-4669-8E01-9A53F8A2A08A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uploader.UnitTests", "Uploader.UnitTests\Uploader.UnitTests.csproj", "{8F993417-55B5-4254-8253-135F00634BD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0619B048-EB53-45FB-B29F-800B833BDD08}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
