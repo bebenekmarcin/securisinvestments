@@ -6,6 +6,6 @@ namespace Uploader.Services
     public interface IDatabaseService
     {
         void SaveInvestments(IList<Investment> investments);
-        void SaveInvestmentTotal(InvestmentTotal investments);
+        void SaveInvestmentTotal(InvestmentTotal investmentTotal);
     }
 }

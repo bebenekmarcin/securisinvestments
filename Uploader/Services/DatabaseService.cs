@@ -7,12 +7,16 @@ namespace Uploader.Services
     {
         public void SaveInvestments(IList<Investment> investments)
         {
-            throw new System.NotImplementedException();
+            using var db = new DatabaseContext();
+            db.Investments.AddRange(investments);
+            db.SaveChanges();
         }
 
-        public void SaveInvestmentTotal(InvestmentTotal investments)
+        public void SaveInvestmentTotal(InvestmentTotal investmentTotal)
         {
-            throw new System.NotImplementedException();
+            using var db = new DatabaseContext();
+            db.InvestmentTotals.Add(investmentTotal);
+            db.SaveChanges();
         }
     }
 }

@@ -8,12 +8,16 @@ namespace Uploader.IntegrationTests.Services
 {
     public class CsvServiceShould
     {
+        readonly CsvService _csvService;
+        public CsvServiceShould()
+        {
+            _csvService = new CsvService();
+        }
+
         [Fact]
         public void ReadInvestmentsFromFile()
         {
-            var csvService = new CsvService();
-
-            var investments = csvService.GetInvestments(@"Investments.csv");
+            var investments = _csvService.GetInvestments(@"Investments.csv");
 
             investments.Should().NotBeEmpty();
         }
@@ -21,9 +25,7 @@ namespace Uploader.IntegrationTests.Services
         [Fact]
         public void ThrowException_WhenFileNotExists()
         {
-            var csvService = new CsvService();
-
-            Action action = () =>  csvService.GetInvestments(@"FileWhichNotExists.csv");
+            Action action = () =>  _csvService.GetInvestments(@"FileWhichNotExists.csv");
 
             action.Should().Throw<FileNotFoundException>();
         }
