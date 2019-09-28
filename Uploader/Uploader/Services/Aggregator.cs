@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Uploader.Model;
 
 namespace Uploader.Services
@@ -8,7 +8,12 @@ namespace Uploader.Services
     {
         public InvestmentTotal GetTotals(IList<Investment> investments)
         {
-            throw new NotImplementedException();
+            return new InvestmentTotal
+            {
+                ValueTotal = investments.Sum(i => i.Value),
+                CollateralTotal = investments.Sum(i => i.Collateral),
+                NetTotal = investments.Sum(i => i.Net)
+            };
         }
     }
 }
